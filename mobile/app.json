@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "VitaFlux",
+    "slug": "vitaflux-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "vitaflux",
+    "splash": {
+      "backgroundColor": "#0A0A0F"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.vitaflux.mobile"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#D32F2F",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png"
+      },
+      "package": "com.vitaflux.mobile",
+      "softwareKeyboardLayoutMode": "pan"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-font"
+    ],
+    "extra": {
+      "apiUrl": "http://10.0.2.2:3000",
+      "eas": {
+        "projectId": "d4af796a-747f-4716-8ef1-52cd34a7bb56"
+      }
+    }
+  }
+}

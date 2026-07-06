@@ -1,0 +1,116 @@
+/* ─────────────────────────────────────────────────────────
+  SMART REPORT — New Design
+  ───────────────────────────────────────────────────────── */
+
+:root {
+  --report-bg: #F4F6FA;
+  --card-bg: #FFFFFF;
+  --card-radius: 16px;
+  --card-border: 1px solid #E2E8F0;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+  --shadow-hover: 0 10px 30px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+  --primary-navy: #1B1F3B;
+  --danger-red: #E53E3E;
+  --warning-orange: #F6AD55;
+  --success-green: #48BB78;
+  --text-gray: #64748b;
+  --text-dark: #1e293b;
+  --text-light: #94a3b8;
+
+  /* Heatmap palette as per requirements */
+  --heat-empty: #FFF0F0;
+  --heat-low: #FFBDBD;
+  --heat-medium: #FF8080;
+  --heat-high: #FF4444;
+  --heat-max: #CC0000;
+}
+
+/* ── Base ── */
+.smart-report-page {
+  background: var(--report-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Card ── */
+.report-card {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.report-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ── Grid ── */
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  flex: 1;
+}
+
+/* Responsive grid */
+@media (max-width: 1024px) {
+  .report-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Skeleton shimmer ── */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 37%, #f1f5f9 63%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 8px;
+}
+
+/* ── Purple tinted card (Card 9) ── */
+.card-purple-tint {
+  background: linear-gradient(135deg, rgba(237, 233, 254, 0.8) 0%, rgba(233, 213, 255, 0.6) 100%);
+  border: 1px solid #ddd6fe;
+}
+
+/* ── Custom scrollbar ── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
